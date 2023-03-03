@@ -13,7 +13,9 @@
 <body>
     <h1>Tarea 9: Listado de cursos</h1>
 
-    <form  role="search" action="/webapp-cursos/cursos/inpeccionar" method="get">
+    <p><a href="/webapp-cursos/cursos/form" >Crear<a></p>
+
+    <form  role="search" action="<%=request.getContextPath()%>/cursos/inpeccionar" method="get">
       <input name="buscar" id="buscar" type="search" >
       <button type="submit">Buscar</button>
     </form>
@@ -25,6 +27,9 @@
                 <th>Descripcion</th>
                 <th>Insthuctor</th>
                 <th>Duracion</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+
             </tr>
         <% for (Curso curso: cursos){%>
             <tr>
@@ -33,6 +38,8 @@
                 <td><%=curso.getDescripcion()%></td>
                 <td><%=curso.getInstructor()%></td>
                 <td><%=curso.getDuracion()%></td>
+                <td><a href="<%=request.getContextPath()%>/cursos/form?id=<%=curso.getId()%>" >editar</a></td>
+                <td><a href="<%=request.getContextPath()%>/cursos/eliminar?id=<%=curso.getId()%>" >eliminar</a></td>
             </tr>
         <%}%>
         </table>

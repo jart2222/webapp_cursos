@@ -1,7 +1,7 @@
 package org.jose.apiservlet.webapp.cursos.headers.models;
 
 public class Curso {
-    private int id;
+    private Long id;
     private String nombre;
     private String descripcion;
     private String instructor;
@@ -10,7 +10,7 @@ public class Curso {
     public Curso() {
     }
 
-    public Curso(int id, String nombre, String descripcion, String instructor, Long duracion) {
+    public Curso(Long id, String nombre, String descripcion, String instructor, Long duracion) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -18,11 +18,11 @@ public class Curso {
         this.duracion = duracion;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -19,7 +19,6 @@ import java.util.Optional;
 public class BuscarCursoServlet  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("si me ejecuto inspeccionar");
         Optional<String> parametroBuscar = Optional.ofNullable((String) req.getParameter("buscar"));
         Connection conn=(Connection)req.getAttribute("conn");
         CursoService cursoService= new CursosServiceJdbcImpl(conn);
@@ -32,6 +31,7 @@ public class BuscarCursoServlet  extends HttpServlet {
         }
         req.setAttribute("cursos", cursos);
         getServletContext().getRequestDispatcher("/listado.jsp").forward(req, resp);
+
 
     }
 }

@@ -5,6 +5,8 @@ C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\
 C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\filters\ConexionFilter.java
 C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\service\ServiceJdbcException.java
 C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\util\ConexionBaseDatos.java
+C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\controllers\CursosFormServlet.java
 C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\repositories\Repository.java
+C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\controllers\CursosEliminarServlet.java
 C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\controllers\CursosServlet.java
 C:\Users\w10\Documents\developer g\developer JavaEE\webapp-cursos\src\main\java\org\jose\apiservlet\webapp\cursos\headers\repositories\CursosRepositoryJdbcImpl.java

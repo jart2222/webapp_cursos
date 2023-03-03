@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class CursosServiceJdbcImpl implements CursoService{
-    private Repository repositoryJdbc;
+    private Repository<Curso> repositoryJdbc;
 
     public CursosServiceJdbcImpl(Connection connection) {
         this.repositoryJdbc=new CursosRepositoryJdbcImpl(connection);
@@ -36,6 +36,28 @@ public class CursosServiceJdbcImpl implements CursoService{
 
     @Override
     public Optional<Curso> porId(Long id) {
-        return Optional.empty();
+        try {
+            return Optional.ofNullable(repositoryJdbc.porId(id));
+        }catch (SQLException e){
+            throw new ServiceJdbcException(e.getMessage(), e.getCause());
+        }
+    }
+
+    @Override
+    public void guardar(Curso curso) {
+        try {
+            repositoryJdbc.guardar(curso);
+        } catch (SQLException e) {
+            throw new ServiceJdbcException(e.getMessage(), e.getCause());
+        }
+    }
+
+    @Override
+    public void eliminar(Long id) {
+        try {
+            repositoryJdbc.eliminar(id);
+        } catch (SQLException e) {
+            throw new ServiceJdbcException(e.getMessage(), e.getCause());
+        }
     }
 }

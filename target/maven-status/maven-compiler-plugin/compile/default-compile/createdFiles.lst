@@ -1,7 +1,9 @@
 org\jose\apiservlet\webapp\cursos\headers\util\ConexionBaseDatos.class
+org\jose\apiservlet\webapp\cursos\headers\controllers\CursosFormServlet.class
 org\jose\apiservlet\webapp\cursos\headers\filters\ConexionFilter.class
 org\jose\apiservlet\webapp\cursos\headers\repositories\Repository.class
 org\jose\apiservlet\webapp\cursos\headers\service\CursoService.class
+org\jose\apiservlet\webapp\cursos\headers\controllers\CursosEliminarServlet.class
 org\jose\apiservlet\webapp\cursos\headers\models\Curso.class
 org\jose\apiservlet\webapp\cursos\headers\service\CursosServiceJdbcImpl.class
 org\jose\apiservlet\webapp\cursos\headers\service\ServiceJdbcException.class
