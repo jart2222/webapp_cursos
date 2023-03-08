@@ -71,7 +71,7 @@ public class CursosFormServlet extends HttpServlet {
         if (instructor==null|| instructor.isBlank()){
             errores.put("instructor", "El instructor es requerido!");
         }
-        if (duracion==null|| duracion<0 ){
+        if (duracion==null||duracion<=0){
             errores.put("duracion", "La duracion es requerida!");
         }
 
