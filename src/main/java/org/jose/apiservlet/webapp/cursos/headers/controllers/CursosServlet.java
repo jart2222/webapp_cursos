@@ -25,6 +25,7 @@ public class CursosServlet extends HttpServlet {
         CursoService cursoService= new CursosServiceJdbcImpl(conn);
         List<Curso> cursos= cursoService.listar();
         req.setAttribute("cursos", cursos);
+        req.setAttribute("title", req.getAttribute("title")+"Listado de cursos");
         getServletContext().getRequestDispatcher("/listado.jsp").forward(req, resp);
     }
 }
