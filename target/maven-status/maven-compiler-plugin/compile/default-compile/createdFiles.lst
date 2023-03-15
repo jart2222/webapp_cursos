@@ -1,3 +1,4 @@
+org\jose\apiservlet\webapp\cursos\headers\util\ConexionBaseDatosDS.class
 org\jose\apiservlet\webapp\cursos\headers\filters\ConexionFilter.class
 org\jose\apiservlet\webapp\cursos\headers\listeners\AplicacionListener.class
 org\jose\apiservlet\webapp\cursos\headers\models\Curso.class

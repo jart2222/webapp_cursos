@@ -25,7 +25,7 @@
                             <th>Id</th>
                             <th>Nombre</th>
                             <th>Descripcion</th>
-                            <th>Insthuctor</th>
+                            <th>Instructor</th>
                             <th>Duracion</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
