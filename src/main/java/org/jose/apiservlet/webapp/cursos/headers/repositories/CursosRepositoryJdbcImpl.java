@@ -1,18 +1,18 @@
 package org.jose.apiservlet.webapp.cursos.headers.repositories;
 
+import jakarta.inject.Inject;
+import org.jose.apiservlet.webapp.cursos.headers.configs.MysqlConn;
+import org.jose.apiservlet.webapp.cursos.headers.configs.Repository;
 import org.jose.apiservlet.webapp.cursos.headers.models.Curso;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-public class CursosRepositoryJdbcImpl implements Repository<Curso>{
+@Repository
+public class CursosRepositoryJdbcImpl implements CrudRepository<Curso> {
+    @Inject
+    @MysqlConn
     private Connection conn;
-
-    public CursosRepositoryJdbcImpl(Connection conn) {
-        this.conn = conn;
-    }
-
     @Override
     public List<Curso> listar() throws SQLException {
         List<Curso> cursos =new ArrayList<>();

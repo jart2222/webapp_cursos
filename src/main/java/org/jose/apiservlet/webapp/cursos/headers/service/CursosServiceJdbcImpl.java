@@ -1,20 +1,20 @@
 package org.jose.apiservlet.webapp.cursos.headers.service;
 
+import jakarta.inject.Inject;
+import org.jose.apiservlet.webapp.cursos.headers.configs.CursosServicePrincipal;
+import org.jose.apiservlet.webapp.cursos.headers.configs.Service;
 import org.jose.apiservlet.webapp.cursos.headers.models.Curso;
-import org.jose.apiservlet.webapp.cursos.headers.repositories.CursosRepositoryJdbcImpl;
-import org.jose.apiservlet.webapp.cursos.headers.repositories.Repository;
-
-import java.sql.Connection;
+import org.jose.apiservlet.webapp.cursos.headers.repositories.CrudRepository;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@CursosServicePrincipal
 public class CursosServiceJdbcImpl implements CursoService{
-    private Repository<Curso> repositoryJdbc;
+    @Inject
+    private CrudRepository<Curso> repositoryJdbc;
 
-    public CursosServiceJdbcImpl(Connection connection) {
-        this.repositoryJdbc=new CursosRepositoryJdbcImpl(connection);
-    }
 
     @Override
     public List<Curso> listar() {

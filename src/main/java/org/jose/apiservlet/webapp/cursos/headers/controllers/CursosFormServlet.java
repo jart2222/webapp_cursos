@@ -1,14 +1,15 @@
 package org.jose.apiservlet.webapp.cursos.headers.controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.jose.apiservlet.webapp.cursos.headers.configs.CursosServicePrincipal;
 import org.jose.apiservlet.webapp.cursos.headers.models.Curso;
 import org.jose.apiservlet.webapp.cursos.headers.service.CursoService;
 import org.jose.apiservlet.webapp.cursos.headers.service.CursosServiceJdbcImpl;
-import org.jose.apiservlet.webapp.cursos.headers.util.ConexionBaseDatos;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -18,10 +19,12 @@ import java.util.Optional;
 
 @WebServlet({"/cursos/form"})
 public class CursosFormServlet extends HttpServlet {
+    @Inject
+    @CursosServicePrincipal
+    private  CursoService service;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn= (Connection) req.getAttribute("conn");
-        CursoService service=new CursosServiceJdbcImpl(conn);
+
         Long id;
         try {
             id=Long.parseLong(req.getParameter("id"));
@@ -42,10 +45,6 @@ public class CursosFormServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn= (Connection) req.getAttribute("conn");
-        CursoService service=new CursosServiceJdbcImpl(conn);
-
-
         Long duracion;
         try {
             duracion=Long.valueOf(req.getParameter("duracion"));
